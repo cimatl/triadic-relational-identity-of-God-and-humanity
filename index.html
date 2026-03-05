@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0A0E14">
+<title>As God Is, So We Are</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0E14;--card:#131820;--card2:#1A2030;--surf:#1E2533;--t:#E2E8F0;--t2:#8899AA;--t3:#4A5568;--gold:#E8B94E;--bdr:#2A3444;--wp:#1B4332;--wl:#D8F3DC;--wm:#40916C;--wg:rgba(64,145,108,.12);--hp:#3C1361;--hl:#E8DAEF;--hm:#8E44AD;--hg:rgba(142,68,173,.12);--ap:#7B2D26;--al:#FADBD8;--am:#CB4335;--ag:rgba(203,67,53,.12);--font:'Cormorant Garamond','Noto Serif KR',Georgia,serif;--rad:14px}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--t);font-family:var(--font);font-size:16px;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:9px}
+button{cursor:pointer;font-family:inherit;border:none;background:none;color:inherit;-webkit-tap-highlight-color:transparent}textarea{font-family:inherit}
+.app{display:flex;flex-direction:column;height:100dvh}
+.hdr{position:sticky;top:0;z-index:50;padding:12px 16px 8px;background:rgba(10,14,20,.94);backdrop-filter:blur(14px)}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.hdr-title{font-size:17px;font-weight:700;background:linear-gradient(135deg,var(--wm),var(--hm),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hdr-sub{font-size:11px;color:var(--t2);margin-top:1px}
+.lang-btn{flex-shrink:0;margin-left:8px;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;background:rgba(232,185,78,.15);color:var(--gold);border:1px solid rgba(232,185,78,.3)}
+.lang-btn:active{transform:scale(.95)}
+.nav-row{display:flex;gap:4px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}.nav-row::-webkit-scrollbar{display:none}
+.nav-btn{flex-shrink:0;padding:6px 10px;border-radius:10px;font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;transition:all .2s}
+.nav-btn.on{background:var(--card2);color:var(--t);border:1px solid var(--bdr)}
+.content{flex:1;overflow-y:auto;padding:0 16px 32px;scroll-behavior:smooth}
+.part-hdr{display:flex;align-items:center;gap:12px;margin:12px 0 16px}
+.part-icon{font-size:28px}.part-title{font-size:19px;font-weight:700}
+.badge{display:inline-flex;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700}
+.bw{background:var(--wl);color:var(--wp)}.bh{background:var(--hl);color:var(--hp)}.ba{background:var(--al);color:var(--ap)}
+.mo{font-size:10px;font-family:monospace;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:4px}
+.mt{color:var(--wm);background:rgba(64,145,108,.1)}.ma{color:var(--am);background:rgba(203,67,53,.1)}.mp{color:var(--hm);background:rgba(142,68,173,.1)}
+.dtabs{display:flex;gap:8px;margin:16px 0}
+.dtab{flex:1;padding:10px;border-radius:var(--rad);text-align:center;font-weight:700;font-size:13px;transition:all .3s;border:2px solid transparent}
+.dtab:active{transform:scale(.97)}
+.ow{background:var(--wp);color:#fff;border-color:var(--wp);box-shadow:0 4px 16px rgba(27,67,50,.5)}
+.oh{background:var(--hp);color:#fff;border-color:var(--hp);box-shadow:0 4px 16px rgba(60,19,97,.5)}
+.oa{background:var(--ap);color:#fff;border-color:var(--ap);box-shadow:0 4px 16px rgba(123,45,38,.5)}
+.xw{color:var(--wm);border-color:rgba(27,67,50,.25);background:var(--surf)}
+.xh{color:var(--hm);border-color:rgba(60,19,97,.25);background:var(--surf)}
+.xa{color:var(--am);border-color:rgba(123,45,38,.25);background:var(--surf)}
+.dp{border-radius:18px;padding:16px;margin-bottom:12px;border:1.5px solid transparent;animation:fu .4s ease}
+.pw{background:var(--wg);border-color:rgba(27,67,50,.3)}.ph{background:var(--hg);border-color:rgba(60,19,97,.3)}.pa{background:var(--ag);border-color:rgba(123,45,38,.3)}
+.vc{display:flex;align-items:flex-start;gap:8px;padding:8px;border-radius:12px;background:var(--card);border:1px solid var(--bdr);margin-bottom:6px;animation:fu .3s ease}
+.vr{font-size:11px;font-family:monospace;font-weight:700;flex-shrink:0;padding:3px 6px;border-radius:6px;margin-top:2px}
+.vrw{background:rgba(27,67,50,.15);color:var(--wm)}.vrh{background:rgba(60,19,97,.15);color:var(--hm)}.vra{background:rgba(123,45,38,.15);color:var(--am)}
+.vt{font-size:12px;line-height:1.5;flex:1}
+.fm{padding:12px;border-radius:var(--rad);background:var(--card);border-left:3px solid var(--wm);margin-top:8px}
+.fm p{font-size:12px;font-style:italic;line-height:1.6}
+.fw{border-color:var(--wm)}.fw p{color:var(--wm)}.fh{border-color:var(--hm)}.fh p{color:var(--hm)}.fa{border-color:var(--am)}.fa p{color:var(--am)}.fg{border-color:var(--gold)}.fg p{color:var(--gold)}
+.ac{border-radius:var(--rad);overflow:hidden;margin-bottom:8px;border:1px solid var(--bdr);background:var(--card)}
+.ah{width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 12px;text-align:left;font-size:13px;font-weight:600}
+.aw{font-size:12px;color:var(--t3);transition:transform .3s}.aw.op{transform:rotate(180deg)}
+.ab{padding:0 12px 12px;font-size:13px;line-height:1.6;animation:fu .3s ease}
+.pt{margin-bottom:8px;padding:10px;border-radius:var(--rad);background:var(--card);border:1px solid var(--bdr)}
+.ptg{font-size:11px;font-weight:700;color:var(--wm);margin-bottom:6px}
+.ptr{display:flex;gap:6px}.pti,.pta{flex:1;padding:6px;border-radius:8px;font-size:11px;line-height:1.4}
+.pti{background:rgba(27,67,50,.08);color:var(--wm)}.pta{background:rgba(123,45,38,.08);color:var(--am)}
+.fc{border-radius:var(--rad);overflow:hidden;border:1px solid var(--bdr);margin-bottom:8px}
+.fch{padding:8px 12px;background:var(--surf)}
+.fcg{display:grid;grid-template-columns:1fr 1fr}
+.fcc{padding:10px;font-size:11px;line-height:1.5}
+.fcc:first-child{background:rgba(27,67,50,.04);border-right:1px solid var(--bdr)}.fcc:last-child{background:rgba(123,45,38,.04)}
+.fcl{font-size:10px;font-weight:700;margin-bottom:4px}
+.st{width:100%;text-align:left;border-radius:18px;padding:14px;transition:all .5s;margin-bottom:8px}
+.st.lk{background:var(--surf);border:1.5px solid var(--bdr);opacity:.5}.st.op{background:var(--card);opacity:1}
+.st:active{transform:scale(.98)}
+.sl{font-size:11px;font-weight:700;margin-bottom:4px}
+.stx{font-size:13px;line-height:1.6}.sth{font-size:13px;font-style:italic;color:var(--t3)}
+.fb{border-radius:18px;padding:20px;text-align:center;margin:16px 0;background:linear-gradient(135deg,rgba(27,67,50,.12),rgba(60,19,97,.12),rgba(123,45,38,.12));border:2px solid rgba(232,185,78,.25);animation:fu .6s ease}
+.fq{font-size:14px;color:var(--t2);margin-bottom:10px}
+.faa{font-size:24px;font-weight:700;margin-bottom:14px;background:linear-gradient(135deg,var(--wm),var(--hm),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.fd{font-size:12px;line-height:1.6;max-width:360px;margin:0 auto}
+.rf{border-radius:18px;padding:14px;margin-top:16px;background:var(--surf);border:1px solid rgba(232,185,78,.2)}
+.rfh{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.rft{font-size:13px;font-weight:700;color:var(--gold)}.rfc{font-size:11px;color:var(--t3);margin-left:auto}
+.rfq{font-size:13px;line-height:1.6;margin-bottom:10px}
+.rf textarea{width:100%;border-radius:var(--rad);padding:10px;font-size:13px;resize:none;outline:none;background:var(--bg);color:var(--t);border:1px solid var(--bdr)}
+.rfa{display:flex;align-items:center;gap:8px;margin-top:8px}
+.rfs{padding:8px 16px;border-radius:10px;font-size:12px;font-weight:700;background:var(--gold);color:var(--bg)}.rfs:active{transform:scale(.95)}
+.rfd{display:flex;gap:4px;margin-left:auto}.rdo{width:7px;height:7px;border-radius:50%;background:var(--bdr)}.rdo.on{background:var(--gold)}
+.rvd{margin-top:10px;padding-top:10px;border-top:1px solid var(--bdr)}
+.rvt{font-size:11px;font-weight:700;color:var(--t2);margin-bottom:6px}
+.rve{margin-bottom:6px;padding:8px;border-radius:10px;background:var(--bg);font-size:11px;line-height:1.5}
+.rveq{font-weight:600;color:var(--gold);margin-bottom:3px}
+.co{margin-bottom:6px;padding:10px;border-radius:var(--rad);background:var(--card);border:1px solid var(--bdr);font-size:11px;line-height:1.5}
+.cg{color:var(--am)}.ch{color:var(--t)}.cw{color:var(--wm)}.cwh{color:var(--hm);font-weight:700}
+.ctabs{display:flex;gap:8px;margin-bottom:16px}
+.ctab{flex:1;padding:10px 4px;border-radius:var(--rad);text-align:center;font-weight:700;font-size:14px;border:2px solid transparent;transition:all .3s}
+.ctab:active{transform:scale(.97)}.csub{font-size:10px;font-weight:400;opacity:.7;margin-top:2px}
+.cd{margin-bottom:8px;padding:8px;border-radius:10px;background:var(--card2);font-size:12px;line-height:1.5}
+.cd .badge{margin-right:4px}
+.cphi{font-size:12px;font-style:italic;color:var(--gold);margin-top:8px;line-height:1.6}
+.intro{font-size:14px;line-height:1.7;margin-bottom:12px}
+.idet{font-size:13px;line-height:1.6;color:var(--t2);margin-bottom:8px}
+.stl{font-size:16px;font-weight:700;margin-bottom:4px}
+.sdsc{font-size:12px;line-height:1.6;color:var(--t2);margin-bottom:12px}
+.dtl{font-size:11px;color:var(--t2);margin-left:6px}
+.ctx{font-size:13px;line-height:1.7;margin:10px 0}
+.nb{display:flex;gap:10px;margin-top:20px}
+.np,.nn{flex:1;padding:10px;border-radius:var(--rad);font-size:13px;text-align:center;transition:all .3s}
+.np{background:var(--surf);color:var(--t2);border:1px solid var(--bdr)}
+.nn{background:rgba(27,67,50,.15);color:var(--wm);border:1px solid rgba(27,67,50,.3);font-weight:600}
+.np:active,.nn:active{transform:scale(.97)}
+.ftr{text-align:center;padding:8px;font-size:11px;color:var(--t3);border-top:1px solid var(--bdr);flex-shrink:0}
+.fr{display:flex;align-items:flex-start;gap:6px;margin-bottom:3px}.fr .badge{flex-shrink:0}.fr span{font-size:12px;line-height:1.5}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+<script>
+const D={en:{title:"As God Is, So We Are",subtitle:"The Triadic Relational Identity of God & Humanity",desc:"WHERE · WHO · WHAT — Spatial-Relational Formation",lb:"한국어",nav:["God's Triad","Human Image","Fracture & Restoration","Korean Context","Synthesis"],rt:"Reflection",rp:"Write your reflection here...",rs:"Save →",rv:"Your Reflections",tr:"Tap to reveal...",pv:"← Previous",nx:"Next →",
+p1:{title:"God's Triadic Identity",icon:"✦",intro:'Classical theology asks "What is God?" — seeking static definition. Biblical narrative asks "Where is God?" — answering with spatial presence, covenantal action, relational self-disclosure.',id:'WHERE, WHO, WHAT are simultaneous, not sequential; mutually constitutive, not separable. "I AM WHERE I ACT, and WHERE I ACT reveals WHO I AM."',
+ex:{t:"Exodus 3:7-14",d:"All three dimensions revealed simultaneously:",w:'"I have seen... heard... come DOWN" (3:7-8). Location with the enslaved is constitutive, not incidental.',a:'"...to rescue them" (3:8). Liberation happens AT God\'s WHERE. Action and location inseparable.',h:'"I AM WHO I AM" (3:14). Self-disclosure: "I will be present as who I will be present as." WHO constituted by WHERE + WHAT.'},
+dims:{where:{t:"WHERE God Is",c:"God is known by address — always toward margins, vulnerable, displaced. Location constitutes identity. God's showing-up-with-the-enslaved IS what omnipresence means.",f:"God is not first omnipresent then shows up with the enslaved. The showing-up IS omnipresence. Not first loving then comes down. The coming-down IS love.",
+vs:[{r:"Gen 1:2",t:"Spirit hovering over chaos — toward formlessness",m:"→ TOWARD"},{r:"Gen 3:8-9",t:'Walking toward the hiding — "Where are you?"',m:"→ TOWARD"},{r:"Gen 16:7-13",t:"With Hagar at the spring — seeing the unseen",m:"→ TOWARD"},{r:"Exod 3:7-8",t:'"I have come DOWN" — with the enslaved',m:"↓ DESCEND"},{r:"Exod 25:8",t:'"That I may dwell IN THEIR MIDST"',m:"→ TOWARD"},{r:"Ezek 10-11",t:"DEPARTS unjust temple — refuses capture",m:"← AWAY"},{r:"John 1:14",t:'"Word became flesh and TABERNACLED among us"',m:"↓ DESCEND"},{r:"Heb 13:12",t:"Suffered OUTSIDE THE CITY GATE",m:"↓ DESCEND"},{r:"Rev 21:3",t:'"Dwelling of God WITH humanity"',m:"→ TOWARD"}]},
+who:{t:"WHO God Is",c:'Identity through encounter — "I AM WHO I AM" is self-disclosure: "I will be present as who I will be present as." WHO constituted by WHERE + WHAT.',f:"God's WHO is never disclosed apart from WHERE and WHAT. Three are one self-disclosure.",
+vs:[{r:"Exod 3:14",t:"אֶהְיֶה אֲשֶׁר אֶהְיֶה — dynamic presence",m:"◎"},{r:"Gen 16:13",t:"El Roi: 'God WHO SEES me'",m:"◎"},{r:"Exod 34:6-7",t:"Compassionate, gracious — relational attributes",m:"◎"},{r:"John 5:19",t:'"Son can do nothing by himself" — fully relational',m:"◎"},{r:"Rev 22:4",t:'"They will see his face" — eternal presence',m:"◎"}]},
+what:{t:"WHAT God Does",c:'Nature revealed through action. Creating, liberating, dwelling-with — not activities added to divine nature. They ARE divine nature. "I AM WHAT I DO."',f:"Not first loving then comes down. Coming-down IS love. Not first just then sides with oppressed. Being-where-oppressed-are IS justice.",
+vs:[{r:"Gen 1:1-3",t:"Creating order from chaos",m:"⚡"},{r:"Exod 3:8",t:'"Come down to RESCUE" — liberation',m:"⚡"},{r:"Isa 43:19",t:'"Doing a NEW THING"',m:"⚡"},{r:"Mark 15:37",t:"Dying outside camp — cost of relocation",m:"⚡"},{r:"Rev 21:5",t:'"Making ALL THINGS new"',m:"⚡"}]}},
+rl:["Where has God shown up unexpectedly in your life?","What does Jesus born in a manger and dying outside the city mean?","When God seemed absent, was God perhaps relocating?"]},
+p2:{title:"Humanity's Triadic Image",icon:"◎",intro:"If God's identity = WHERE–WHO–WHAT, humans made in God's image bear the same structure. Imago Dei is relational pattern, not possessed substance.",md:"Three models (substantive, relational, functional) each isolate one dimension. WHERE–WHO–WHAT integrates all three.",
+dims:{where:{t:"WHERE — Spatial Vocation",c:"Where you locate yourself is a theological statement about who you understand God to be.",k:"Gen 2:15: God's first act is SPATIAL — placing (יַנִּחֵהוּ). Verbs עָבַד/שָׁמַר are priestly tabernacle verbs.",
+ps:[{g:"Moves toward chaos (Gen 1:2)",h:"Move toward what is broken",a:"Avoid messy, protect comfort"},{g:"Comes down (Exod 3:8)",h:"Descend toward powerless",a:"Climb toward power"},{g:"Dwells in midst (Exod 25:8)",h:"Be present with community",a:"Isolate"},{g:"With expelled (Gen 16)",h:"Go to margins",a:"Stay at center"},{g:"Leaves unjust temple (Ezek 10)",h:"Refuse to sacralize injustice",a:"Identify God with institutions"},{g:"Outside camp (Heb 13:12)",h:"Bear disgrace with marginalized",a:"Preserve reputation"},{g:"Rests (Gen 2:2-3)",h:"Practice Sabbath",a:"Totalize productivity"}]},
+who:{t:"WHO — Relational Identity",c:"Identity is trajectory, not essence. First question: 'Where are you?' (Gen 3:9). Position determines identity.",k:"Before fall: WHO constituted by WHERE (garden) + WHAT (serving). After: WHERE changes (hiding), so WHO changes.",
+fs:[{n:"Abraham",w:"Ur → Canaan → Moriah",a:"Obeys, altars, offers Isaac",wh:"Trust through displacement"},{n:"Jacob",w:"Flees → Jabbok → return",a:"Deceives, wrestles, limps",wh:"Transformed at spatial encounter"},{n:"Ruth",w:"Moab → Bethlehem → threshing floor",a:"Clings, gleans, claims rights",wh:"Loyalty across ethnic boundary"},{n:"Prodigal",w:"Home → far country → return",a:"Squanders, returns",wh:"Defined by vector: away then toward"}]},
+what:{t:"WHAT — Functional Vocation",c:"WHAT at specific WHERE produces WHO. Imago Dei is pattern of correspondence, not substance.",k:"Identity emerges through doing-at-a-location, not prior possession.",
+cs:[{g:"Creates order",h:"Culture-making",w:"World to steward",wh:"Royal image-bearer"},{g:"Blesses (Gen 1:28)",h:"Mediates blessing",w:"Among nations",wh:"Priestly mediator"},{g:"Covenants",h:"Keeps covenant",w:"In relationship",wh:"Covenant partner"},{g:"Walks with (Gen 3:8)",h:"Walks with God",w:"Path of life",wh:"Companion of God"},{g:"Rests (Gen 2:2-3)",h:"Keeps Sabbath",w:"Time's rhythm",wh:"Creature who trusts"},{g:"Seeks lost (Gen 3:9)",h:"Pursues justice",w:"At margins",wh:"Prophetic witness"}]}},
+rl:["Where are YOU — HOME (●), EXILE (○), GUEST (■), ANALYST (□)?","Direction: → TOWARD, ← AWAY, — STUCK?","Someone at the margins — what would relocating mean?"]},
+p3:{title:"Fracture & Restoration",icon:"⚡",intro:"If imago Dei is triadic, fall is triadic fracture; salvation must be triadic restoration.",
+fl:{t:"The Fall as Triadic Fracture",d:'First response: "Where are you?" (3:9). Spatial diagnosis: you are in the wrong place.',
+rs:[{d:"WHERE",b:"Garden, God's presence, open (2:25)",a:"Hiding (3:8), expelled (3:23-24)"},{d:"WHO",b:"Communion, identity as gift",a:"Blame, shame, fear — identity as defense"},{d:"WHAT",b:"Serving, naming, walking with God",a:"Hiding, blaming, dominating (3:16)"}]},
+sv:{t:"Salvation as Triadic Restoration",d:"'In Christ' = WHERE. 'New creation' = WHO. Reconciliation = WHAT. (2 Cor 5:17)",
+es:[{e:"Abraham (Gen 12)",w:"Ur to promised land",h:"Abram to Abraham",a:"Idol-worshiper to blessing-mediator"},{e:"Exodus",w:"Egypt to Sinai",h:"Slaves to covenant people",a:"Forced labor to worship"},{e:"Incarnation",w:"God enters flesh permanently",h:"Humanity receives presence",a:"Walking, healing, eating with sinners"},{e:"Cross/Resurrection",w:"Into death, breaks it open",h:"'New creation'",a:"Death to life"},{e:"New Creation (Rev 21-22)",w:"'Dwelling with' (21:3)",h:"'See his face' (22:4)",a:"Serving, healing nations"}]},
+ch:{t:"Christ: Perfect Triadic Image",d:"WHERE, WHO, WHAT in complete correspondence.",w:"Margins: manger, Galilee, sinners' table, outside city.",h:'"Son can do nothing by himself" (John 5:19).',a:"Creating, healing, liberating, dwelling-with, cross.",ph:"Phil 2:6-11: spatial movement — emptying, descending, humbling."},
+rl:["Where are you hiding?","Where is fracture most visible in your community?","What would triadic restoration look like in one relationship?"]},
+p4:{title:"Korean Integration",icon:"🌏",intro:"한/정/눈치 map onto WHERE/WHO/WHAT — revealing imago Dei dimensions Western theology overlooked.",
+cc:[{tm:"한 (Han)",dm:"WHERE",cl:"w",df:"Deep unresolved grief from systemic injustice.",sp:"Stuck in wrong WHERE: exile without return.",tr:"WHERE dimension fractured. Image dislocated, not destroyed.",bb:"Ps 137, Ps 13:1, Mark 15:34.",rt:"Spatial relocation: creating spaces for han-bearers to move from exile to communion."},
+{tm:"정 (Jeong)",dm:"WHO",cl:"h",df:"Deep bond through sustained relational presence.",sp:"Relational force constituting WHO in shared space.",tr:"Korean hesed. Identity co-constituted through presence. Gen 2:18: WHO requires relational space.",bb:"Gen 2:18, Ruth 1:16-17, hesed tradition.",rt:"Sustained presence building bonds across difference."},
+{tm:"눈치 (Nunchi)",dm:"WHAT",cl:"a",df:"Reading social space — discerning power, silence, hidden dynamics.",sp:"Spatial intelligence as prophetic action.",tr:"Amos reading exploitation behind liturgy. Jesus reading Pharisees (Mark 12:38-40).",bb:"Amos 5, Jer 7, Mark 12:38-40.",rt:'"Who is centered? Who marginalized? Where is God in this arrangement?"'}],
+rl:["Where do you experience 한?","Where have you experienced 정?","How might 눈치 change how you see your community?"]},
+p5:{title:"Final Synthesis",icon:"✝",intro:"Five theological declarations:",
+ss:[{l:"God's Triadic Identity",c:"g",t:"Known by WHERE (toward margins), WHAT (creating, liberating, dwelling-with), WHO (the One whose being is being-toward)."},{l:"Humanity's Triadic Image",c:"h",t:"Known by WHERE (spatial vocation toward justice), WHAT (serving, confronting injustice), WHO (mobile sanctuaries carrying God's presence)."},{l:"Fall as Triadic Fracture",c:"a",t:'Presence→hiding (WHERE), communion→isolation (WHO), serving→dominating (WHAT). "Where are you?"'},{l:"Salvation as Triadic Restoration",c:"w",t:"New space (WHERE), new identity (WHO), new vocation (WHAT). Christ is perfect triadic image."},{l:"Eschatological Completion",c:"g",t:"Rev 21-22: dwelling with (21:3), face to face (22:4), healing nations (22:2-5). Image restored."}],
+fm:"God's WHO constituted by WHERE, revealed through WHAT. Human WHO likewise. As God is, so we are — embodying the divine pattern.",
+fQ:'Where are you? (Gen 3:9 — אַיֶּכָּה)',fA:"With You. Seeing Your face. Doing Your work.",fD:"Fractured in Eden, completed in New Jerusalem. Face to face, forever.",
+rl:["Honest answer to 'Where are you?'","Write your triadic identity: WHERE + WHO + WHAT.","One step of relocation this week?"]}},
+
+ko:{title:"하나님이 그러하시니 우리도 그러하라",subtitle:"하나님과 인간의 삼중 관계적 정체성",desc:"어디 · 누구 · 무엇 — 공간-관계적 형성",lb:"English",nav:["하나님의 삼중성","인간의 형상","파괴와 회복","한국적 맥락","최종 종합"],rt:"성찰",rp:"여기에 성찰을 적어보세요...",rs:"저장 →",rv:"나의 성찰",tr:"탭하여 열기...",pv:"← 이전",nx:"다음 →",
+p1:{title:"하나님의 삼중 정체성",icon:"✦",intro:'"하나님이 무엇인가?"가 아니라 "어디에 계신가?" — 공간적 현존, 언약적 행동, 관계적 자기 계시의 이야기로 답합니다.',id:'WHERE·WHO·WHAT은 동시적이며 상호 구성적입니다. "나는 내가 행하는 곳에 있고, 그곳이 내가 누구인지를 드러낸다."',
+ex:{t:"출애굽기 3:7-14",d:"세 차원이 동시에 드러남:",w:'"보고... 듣고... 내려왔노라" (3:7-8). 노예와 함께한 위치가 구성적.',a:'"건져내려" (3:8). 해방은 WHERE에서 일어남.',h:'"나는 스스로 있는 자니라" (3:14). "내가 현존할 그대로 현존할 것이다." WHO는 WHERE+WHAT으로 구성.'},
+dims:{where:{t:"어디에 계신가",c:"주소로 알려지심 — 항상 주변부를 향해. 함께 나타나심이 곧 편재. 내려오심이 곧 사랑.",f:"먼저 편재하시고 다음에 나타나시는 것이 아닙니다. 함께하심이 곧 편재입니다.",
+vs:[{r:"창 1:2",t:"혼돈 위 운행 — 무질서를 향해",m:"→ 향함"},{r:"창 3:8-9",t:'"네가 어디 있느냐?" — 숨은 자를 향해',m:"→ 향함"},{r:"창 16:7",t:"하갈과 함께 광야 샘 곁에",m:"→ 향함"},{r:"출 3:7-8",t:'"내려왔노라" — 노예와 함께',m:"↓ 내려옴"},{r:"출 25:8",t:'"그들 중에 거하리라"',m:"→ 향함"},{r:"겔 10-11",t:"불의한 성전 떠나심",m:"← 떠남"},{r:"요 1:14",t:'"말씀이 육신이 되어 장막 치시니"',m:"↓ 내려옴"},{r:"히 13:12",t:"성문 밖에서 고난받으심",m:"↓ 내려옴"},{r:"계 21:3",t:'"장막이 사람들과 함께"',m:"→ 향함"}]},
+who:{t:"누구이신가",c:"관계적 만남으로 드러남. '스스로 있는 자' = 자기 계시. WHO는 WHERE+WHAT으로 구성.",f:"WHERE와 WHAT 없이 WHO는 드러나지 않음. 셋은 하나의 계시.",
+vs:[{r:"출 3:14",t:"אֶהְיֶה אֲשֶׁר אֶהְיֶה — 역동적 현존",m:"◎"},{r:"창 16:13",t:"엘로이: '나를 보시는 하나님'",m:"◎"},{r:"출 34:6-7",t:"자비, 은혜, 더디 노하심 — 관계적 속성",m:"◎"},{r:"요 5:19",t:'"아들이 스스로 할 수 없나니"',m:"◎"},{r:"계 22:4",t:'"얼굴을 볼 것이요"',m:"◎"}]},
+what:{t:"무엇을 하시는가",c:"행동으로 본성이 드러남. 창조, 해방, 함께-거하심이 곧 신적 본성 자체.",f:"먼저 사랑이시고 내려오시는 것이 아님. 내려오심이 곧 사랑. 억압받는 자 곁에 계심이 곧 정의.",
+vs:[{r:"창 1:1-3",t:"혼돈에서 질서 창조",m:"⚡"},{r:"출 3:8",t:'"건져내려 내려옴"',m:"⚡"},{r:"사 43:19",t:'"새 일을 행하리니"',m:"⚡"},{r:"막 15:37",t:"진 밖에서 죽으심",m:"⚡"},{r:"계 21:5",t:'"만물을 새롭게 하노라"',m:"⚡"}]}},
+rl:["하나님이 예상치 못한 곳에 나타나신 경험은?","구유 탄생과 성문밖 죽음의 의미는?","하나님이 부재했을 때, 새 공간으로 이동 중이셨나요?"]},
+p2:{title:"인간의 삼중 형상",icon:"◎",intro:"하나님의 정체성이 WHERE-WHO-WHAT이면, 형상대로 만든 인간도 같은 구조. 이마고 데이는 관계적 패턴.",md:"실체적, 관계적, 기능적 모델 각각 한 차원만 고립. 삼중성이 통합.",
+dims:{where:{t:"어디에 — 공간적 소명",c:"위치가 하나님 이해의 신학적 선언.",k:"창 2:15: 첫 행동은 공간적 — 놓으심(יַנִּחֵהוּ). עָבַד/שָׁמַר는 성막 동사.",
+ps:[{g:"혼돈을 향해 (창 1:2)",h:"깨어진 것을 향해",a:"회피, 편안함 보호"},{g:"내려오심 (출 3:8)",h:"힘없는 자를 향해",a:"권력을 향해 올라감"},{g:"가운데 거하심 (출 25:8)",h:"공동체와 함께",a:"고립"},{g:"쫓겨난 자 (창 16)",h:"주변부로",a:"중심에 머무름"},{g:"불의한 성전 떠남 (겔 10)",h:"불의 신성화 거부",a:"제도=하나님"},{g:"진 밖 (히 13:12)",h:"주변화된 자와 치욕",a:"평판 보존"},{g:"안식 (창 2:2-3)",h:"안식일 실천",a:"생산성 전체화"}]},
+who:{t:"누구가 되는가 — 관계적 정체성",c:"정체성은 궤적. 첫 질문: '어디 있느냐?' (창 3:9). 위치가 정체성 결정.",k:"타락 전: WHO는 WHERE(동산)+WHAT(섬김). 타락 후: WHERE가 변해 WHO가 변함 — 숨음.",
+fs:[{n:"아브라함",w:"우르→가나안→모리아",a:"순종, 제단, 바침",wh:"추방 통한 신뢰 궤적"},{n:"야곱",w:"도주→얍복→귀환",a:"속임, 씨름, 절뚝",wh:"공간적 만남으로 변화"},{n:"룻",w:"모압→베들레헴→타작마당",a:"붙들고, 줍고, 권리주장",wh:"경계 넘은 충성"},{n:"탕자",w:"집→먼나라→귀환",a:"탕진, 귀환",wh:"벡터: 떠남→향함"}]},
+what:{t:"무엇을 하는가 — 기능적 소명",c:"WHERE에서의 WHAT이 WHO를 산출. 대응 패턴.",k:"먼저 '가지고' 행하는 것이 아님. 위치에서의 행함으로 나타남.",
+cs:[{g:"질서 창조",h:"문화 만들기",w:"돌봄의 세계",wh:"왕적 형상"},{g:"복주심",h:"복 중재",w:"열방 가운데",wh:"제사장적 중재자"},{g:"언약",h:"충실히 지킴",w:"관계 안에서",wh:"언약 동반자"},{g:"동행 (창 3:8)",h:"하나님과 동행",w:"삶의 길",wh:"하나님의 동반자"},{g:"안식 (창 2:2-3)",h:"안식일 지킴",w:"시간 리듬",wh:"신뢰하는 피조물"},{g:"잃은 자 찾으심",h:"정의 추구",w:"주변부",wh:"예언자적 증인"}]}},
+rl:["지금 어디? 본향(●), 유배(○), 손님(■), 분석자(□)?","방향: → 향함, ← 떠남, — 멈춤?","주변부의 누군가를 향해 재배치한다는 것은?"]},
+p3:{title:"파괴와 회복",icon:"⚡",intro:"삼중적이면, 타락은 삼중 파괴; 구원은 삼중 회복.",
+fl:{t:"삼중 파괴로서의 타락",d:"첫 반응: '어디 있느냐?' (3:9). 공간적 진단: 잘못된 곳.",
+rs:[{d:"WHERE",b:"동산, 현존, 열림 (2:25)",a:"숨음 (3:8), 추방 (3:23-24)"},{d:"WHO",b:"교제, 선물로서의 정체성",a:"비난, 수치, 두려움 — 방어 정체성"},{d:"WHAT",b:"섬기고/지킴, 동행",a:"숨기, 비난, 지배 (3:16)"}]},
+sv:{t:"삼중 회복으로서의 구원",d:"'안에' = WHERE. '새 피조물' = WHO. 화해 사역 = WHAT. (고후 5:17)",
+es:[{e:"아브라함 (창 12)",w:"우르→약속의 땅",h:"아브람→아브라함",a:"우상→복의 중재자"},{e:"출애굽",w:"애굽→시내산",h:"노예→언약 백성",a:"강제노동→예배"},{e:"성육신",w:"육신에 영구적으로",h:"인간이 현존 받아들임",a:"걸으시고, 치유, 죄인과 먹음"},{e:"십자가/부활",w:"죽음 공간에 가심",h:"'새 피조물'",a:"죽음→생명"},{e:"새 창조 (계 21-22)",w:"'함께 거하심' (21:3)",h:"'얼굴을 봄' (22:4)",a:"섬기고 치유"}]},
+ch:{t:"완전한 삼중 형상: 그리스도",d:"WHERE·WHO·WHAT 완전 대응.",w:"주변부: 구유, 갈릴리, 죄인 식탁, 성 밖.",h:'"스스로 할 수 없나니" (요 5:19).',a:"창조, 치유, 해방, 함께-거함, 십자가.",ph:"빌 2:6-11: 비움, 내려옴, 낮춤의 공간적 움직임."},
+rl:["어디에 숨어 있나요?","공동체에서 삼중 파괴가 가장 보이는 곳은?","한 관계에서 삼중 회복의 모습은?"]},
+p4:{title:"한국적 통합",icon:"🌏",intro:"한/정/눈치가 WHERE/WHO/WHAT에 정확히 매핑됩니다.",
+cc:[{tm:"한 (Han)",dm:"WHERE",cl:"w",df:"체계적 불의의 깊은 미해결 슬픔.",sp:"잘못된 WHERE에 갇힌 경험.",tr:"WHERE 파괴. 형상이 탈구됨.",bb:"시 137, 시 13:1, 막 15:34.",rt:"공간적 재배치: 유배→교제의 공간 창조."},
+{tm:"정 (Jeong)",dm:"WHO",cl:"h",df:"지속적 현존의 깊은 유대.",sp:"공유 공간에서 WHO를 구성하는 힘.",tr:"헤세드의 한국적 경험. 공동 구성. 창 2:18.",bb:"창 2:18, 룻 1:16-17.",rt:"차이를 넘어 유대를 형성하는 현존 실천."},
+{tm:"눈치 (Nunchi)",dm:"WHAT",cl:"a",df:"사회적 공간 읽기 — 권력, 침묵 분별.",sp:"예언자적 공간 지능.",tr:"아모스: 축제 뒤 착취. 예수: 바리새인 간파.",bb:"암 5, 렘 7, 막 12:38-40.",rt:'"누가 중심? 누가 주변화? 하나님은 어디에?"'}],
+rl:["한을 경험하는 곳은?","정을 경험한 곳은?","눈치가 공동체를 보는 방식을 어떻게 바꿀까요?"]},
+p5:{title:"최종 종합",icon:"✝",intro:"다섯 신학적 선언:",
+ss:[{l:"하나님의 삼중 정체성",c:"g",t:"WHERE(주변부), WHAT(창조, 해방, 함께-거하심), WHO(존재가 곧 향함인 분)로 알려지심."},{l:"인간의 삼중 형상",c:"h",t:"WHERE(정의를 향한 소명), WHAT(섬김, 불의 맞섬), WHO(이동하는 성소)로 알려짐."},{l:"삼중 파괴로서의 타락",c:"a",t:'현존→숨음(WHERE), 교제→고립(WHO), 섬김→지배(WHAT). "어디 있느냐?"'},{l:"삼중 회복으로서의 구원",c:"w",t:"새 공간(WHERE), 새 정체성(WHO), 새 소명(WHAT). 그리스도=완전한 삼중 형상."},{l:"종말론적 완성",c:"g",t:"계 21-22: 함께(21:3), 대면(22:4), 치유(22:2-5). 형상 완전 회복."}],
+fm:"하나님의 WHO는 WHERE로 구성되고 WHAT으로 드러남. 인간도 같음. 하나님이 그러하시니 우리도 — 신적 패턴 구현.",
+fQ:"네가 어디 있느냐? (창 3:9)",fA:"주와 함께. 얼굴을 보며. 일을 하며.",fD:"에덴에서 파괴, 새 예루살렘에서 완성. 대면하여, 영원히.",
+rl:["'어디 있느냐?'에 솔직한 답은?","삼중 정체성을 적어보세요.","이번 주 한 걸음은?"]}}};
+
+let L='en',P=0,DM={0:'where',1:'where'},CI=0,SR=0,RS={};
+function t(){return D[L]}
+function bg(d){return`<span class="badge b${d==='WHERE'?'w':d==='WHO'?'h':'a'}">${d}</span>`}
+function mc(m){return m.includes('TOWARD')||m.includes('향')||m.includes('DESCEND')||m.includes('내려')?'mt':m.includes('AWAY')||m.includes('떠')?'ma':m.includes('◎')?'mp':'ma'}
+
+function R(){const d=t(),ps=[d.p1,d.p2,d.p3,d.p4,d.p5],p=ps[P];
+let h=`<header class="hdr"><div class="hdr-top"><div><div class="hdr-title">${d.title}</div><div class="hdr-sub">${d.subtitle}</div></div><button class="lang-btn" onclick="TL()">${d.lb}</button></div><div class="nav-row">`;
+d.nav.forEach((n,i)=>{h+=`<button class="nav-btn${P===i?' on':''}" onclick="GP(${i})">${ps[i].icon} ${n}</button>`});
+h+=`</div></header><div class="content" id="C"><div class="part-hdr"><span class="part-icon">${p.icon}</span><span class="part-title">${p.title}</span></div>`;
+h+=[R1,R2,R3,R4,R5][P](p);
+h+=`<div class="nb">${P>0?`<button class="np" onclick="GP(${P-1})">${d.pv}</button>`:''}${P<4?`<button class="nn" onclick="GP(${P+1})">${d.nx}</button>`:''}</div></div><div class="ftr">${d.desc}</div>`;
+document.getElementById('app').innerHTML=h}
+
+function V(v,dm){const c=dm==='where'?'w':dm==='who'?'h':'a';return`<div class="vc"><span class="vr vr${c}">${v.r}</span><div class="vt">${v.t}<span class="mo ${mc(v.m)}">${v.m}</span></div></div>`}
+function AC(title,body,color,open){return`<div class="ac"><button class="ah" style="color:${color}" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.aw').classList.toggle('op')">${title}<span class="aw${open?' op':''}">▾</span></button><div class="ab"${open?'':' style="display:none"'}>${body}</div></div>`}
+
+function R1(p){const dm=DM[0],dd=p.dims[dm],fc=dm==='where'?'fw':dm==='who'?'fh':'fa',pc=dm==='where'?'pw':dm==='who'?'ph':'pa';
+let h=`<div class="intro">${p.intro}</div><div class="idet">${p.id}</div>`;
+let eb=`<p class="sdsc">${p.ex.d}</p><div class="cd" style="border-left:3px solid var(--wm)">${bg('WHERE')} ${p.ex.w}</div><div class="cd" style="border-left:3px solid var(--am)">${bg('WHAT')} ${p.ex.a}</div><div class="cd" style="border-left:3px solid var(--hm)">${bg('WHO')} ${p.ex.h}</div>`;
+h+=AC(p.ex.t,eb,'var(--gold)',true);
+h+=`<div class="dtabs"><button class="dtab ${dm==='where'?'ow':'xw'}" onclick="SD(0,'where')">WHERE</button><button class="dtab ${dm==='who'?'oh':'xh'}" onclick="SD(0,'who')">WHO</button><button class="dtab ${dm==='what'?'oa':'xa'}" onclick="SD(0,'what')">WHAT</button></div>`;
+h+=`<div class="dp ${pc}" style="animation:fu .4s">${bg(dm.toUpperCase())}<span class="dtl">${dd.t}</span><div class="ctx">${dd.c}</div>`;
+dd.vs.forEach(v=>{h+=V(v,dm)});
+h+=`<div class="fm ${fc}"><p>${dd.f}</p></div></div>`;
+h+=RF(p.rl,0);return h}
+
+function R2(p){const dm=DM[1],dd=p.dims[dm],fc=dm==='where'?'fw':dm==='who'?'fh':'fa',pc=dm==='where'?'pw':dm==='who'?'ph':'pa';
+let h=`<div class="intro">${p.intro}</div><div class="idet">${p.md}</div>`;
+h+=`<div class="dtabs"><button class="dtab ${dm==='where'?'ow':'xw'}" onclick="SD(1,'where')">WHERE</button><button class="dtab ${dm==='who'?'oh':'xh'}" onclick="SD(1,'who')">WHO</button><button class="dtab ${dm==='what'?'oa':'xa'}" onclick="SD(1,'what')">WHAT</button></div>`;
+h+=`<div class="dp ${pc}">${bg(dm.toUpperCase())}<span class="dtl">${dd.t}</span><div class="ctx">${dd.c}</div><div class="fm ${fc}"><p>${dd.k}</p></div>`;
+if(dd.ps)dd.ps.forEach(x=>{h+=`<div class="pt"><div class="ptg">✦ ${x.g}</div><div class="ptr"><div class="pti">→ ${x.h}</div><div class="pta">✗ ${x.a}</div></div></div>`});
+if(dd.fs)dd.fs.forEach(f=>{let b=`<div class="fr">${bg('WHERE')}<span>${f.w}</span></div><div class="fr">${bg('WHAT')}<span>${f.a}</span></div><div class="fr">${bg('WHO')}<span style="font-weight:700">${f.wh}</span></div>`;h+=AC(f.n,b,'var(--hm)',false)});
+if(dd.cs)dd.cs.forEach(c=>{h+=`<div class="co"><div class="cg">⚡ ${c.g}</div><div class="ch">→ ${c.h}</div><div class="cw">📍 ${c.w}</div><div class="cwh">= ${c.wh}</div></div>`});
+h+=`</div>`;h+=RF(p.rl,1);return h}
+
+function R3(p){let h=`<div class="intro">${p.intro}</div><div class="stl" style="color:var(--am)">${p.fl.t}</div><div class="sdsc">${p.fl.d}</div>`;
+p.fl.rs.forEach(r=>{h+=`<div class="fc"><div class="fch">${bg(r.d)}</div><div class="fcg"><div class="fcc"><div class="fcl" style="color:var(--wm)">●</div>${r.b}</div><div class="fcc"><div class="fcl" style="color:var(--am)">○</div>${r.a}</div></div></div>`});
+h+=`<div class="stl" style="color:var(--wm);margin-top:20px">${p.sv.t}</div><div class="sdsc">${p.sv.d}</div>`;
+p.sv.es.forEach((e,i)=>{let b=`<div class="fr">${bg('WHERE')}<span>${e.w}</span></div><div class="fr">${bg('WHO')}<span>${e.h}</span></div><div class="fr">${bg('WHAT')}<span>${e.a}</span></div>`;h+=AC(e.e,b,'var(--wm)',i===0)});
+let cb=`<p class="sdsc">${p.ch.d}</p><div class="cd" style="border-left:3px solid var(--wm)">${bg('WHERE')} ${p.ch.w}</div><div class="cd" style="border-left:3px solid var(--hm)">${bg('WHO')} ${p.ch.h}</div><div class="cd" style="border-left:3px solid var(--am)">${bg('WHAT')} ${p.ch.a}</div><div class="cphi">${p.ch.ph}</div>`;
+h+=AC(p.ch.t,cb,'var(--gold)',true);h+=RF(p.rl,2);return h}
+
+function R4(p){let h=`<div class="intro">${p.intro}</div><div class="ctabs">`;
+p.cc.forEach((c,i)=>{const s=i===CI,cv=c.cl==='w'?'--wp':c.cl==='h'?'--hp':'--ap',cm=c.cl==='w'?'--wm':c.cl==='h'?'--hm':'--am';
+h+=`<button class="ctab" style="background:${s?`var(${cv})`:'var(--surf)'};color:${s?'#fff':`var(${cm})`};border-color:${s?`var(${cv})`:'transparent'}" onclick="SC(${i})">${c.tm.split(' ')[0]}<div class="csub">${c.dm}</div></button>`});
+h+=`</div>`;const cc=p.cc[CI],pc=cc.cl==='w'?'pw':cc.cl==='h'?'ph':'pa',cm=cc.cl==='w'?'var(--wm)':cc.cl==='h'?'var(--hm)':'var(--am)',cv=cc.cl==='w'?'var(--wp)':cc.cl==='h'?'var(--hp)':'var(--ap)';
+h+=`<div class="dp ${pc}"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:20px;font-weight:700;color:${cv}">${cc.tm}</span>${bg(cc.dm)}</div><div style="font-size:14px;font-weight:600;margin-bottom:12px">${cc.df}</div>`;
+const al=L==='ko'?['공간적 읽기','삼중적 의미','성경적 유사점','회복의 길']:['Spatial Reading','Triadic Significance','Biblical Parallels','Restoration'];
+[cc.sp,cc.tr,cc.bb,cc.rt].forEach((x,i)=>{h+=AC(al[i],x,cm,i===0)});
+h+=`</div>`;h+=RF(p.rl,3);return h}
+
+function R5(p){const d=t();let h=`<div class="intro">${p.intro}</div>`;
+const sc={g:'var(--gold)',h:'var(--hm)',a:'var(--am)',w:'var(--wm)'};
+p.ss.forEach((s,i)=>{const sh=i<=SR;h+=`<button class="st ${sh?'op':'lk'}" style="border:1.5px solid ${sh?sc[s.c]+'66':'var(--bdr)'}" onclick="RV(${i})"><div class="sl" style="color:${sc[s.c]}">${s.l}</div>${sh?`<div class="stx">${s.t}</div>`:`<div class="sth">${d.tr}</div>`}</button>`});
+if(SR>=4){h+=`<div class="fm fg"><p>${p.fm}</p></div><div class="fb"><div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">${L==='ko'?'창세기 3:9의 대답':'The Answer to Genesis 3:9'}</div><div class="fq">${p.fQ}</div><div class="faa">${p.fA}</div><div class="fd">${p.fD}</div></div>`}
+h+=RF(p.rl,4);return h}
+
+function RF(pr,pid){const d=t(),k=`${L}_${pid}`;if(!RS[k])RS[k]={q:0,sv:[]};const s=RS[k];
+let h=`<div class="rf"><div class="rfh"><span>💭</span><span class="rft">${d.rt}</span><span class="rfc">${s.q+1}/${pr.length}</span></div><div class="rfq">${pr[s.q]}</div><textarea id="rta" rows="3" placeholder="${d.rp}"></textarea><div class="rfa"><button class="rfs" onclick="SV(${pid})">${d.rs}</button><div class="rfd">`;
+pr.forEach((_,i)=>{h+=`<span class="rdo${i===s.q?' on':''}" onclick="SQ(${pid},${i})"></span>`});
+h+=`</div></div>`;
+if(s.sv.length){h+=`<div class="rvd"><div class="rvt">${d.rv}:</div>`;s.sv.forEach(x=>{h+=`<div class="rve"><div class="rveq">${x.q}</div>${x.a}</div>`});h+=`</div>`}
+return h+`</div>`}
+
+function TL(){L=L==='en'?'ko':'en';R()}
+function GP(i){P=i;R();setTimeout(()=>{const c=document.getElementById('C');if(c)c.scrollTop=0},50)}
+function SD(p,v){DM[p]=v;R()}
+function SC(i){CI=i;R()}
+function RV(i){SR=Math.max(SR,i);R()}
+function SV(pid){const k=`${L}_${pid}`,ta=document.getElementById('rta');if(!ta||!ta.value.trim())return;const d=t(),ps=[d.p1,d.p2,d.p3,d.p4,d.p5];RS[k].sv.push({q:ps[pid].rl[RS[k].q],a:ta.value.trim()});if(RS[k].q<ps[pid].rl.length-1)RS[k].q++;R()}
+function SQ(pid,i){RS[`${L}_${pid}`].q=i;R()}
+R();
+</script>
+</body>
+</html>
